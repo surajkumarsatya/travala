@@ -4,10 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Packages", href: "#packages" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "about" },
+  { label: "Packages", href: "packages" },
+  { label: "Contact", href: "contact" },
 ];
 
 export default function Navbar() {
@@ -15,8 +15,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#e4e2de] bg-[#fbf9f5]/95 backdrop-blur-sm">
-      <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-5 md:px-16">
-        {/* Logo */}
+      <div className="mx-auto flex h-20 max-w-360 items-center justify-between px-5 md:px-16">
         <Link
           href="#home"
           className="flex items-center gap-3"
@@ -26,18 +25,17 @@ export default function Navbar() {
             W
           </div>
 
-          <span className="font-[var(--font-manrope)] text-xl font-semibold uppercase tracking-tight text-[#1b1c1a]">
-            Wanderly
+          <span className="font-display text-xl font-semibold uppercase tracking-tight text-[#1b1c1a]">
+            Travala
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link, index) => (
             <Link
               key={link.label}
               href={link.href}
-              className={`font-[var(--font-work-sans)] text-xs font-semibold uppercase tracking-[0.12em] transition-colors ${
+              className={`font-body text-xs font-semibold uppercase tracking-[0.12em] transition-colors ${
                 index === 0
                   ? "text-[#bd442f]"
                   : "text-[#58413d] hover:text-[#9c2c1a]"
@@ -48,36 +46,14 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Right Actions */}
         <div className="flex items-center gap-4">
-          {/* Explore Trips */}
           <Link
             href="#packages"
-            className="hidden items-center justify-center border border-transparent bg-[#bd442f] px-6 py-2.5 font-[var(--font-work-sans)] text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#9c2c1a] sm:inline-flex"
+            className="hidden items-center justify-center border border-transparent bg-[#bd442f] px-6 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#9c2c1a] sm:inline-flex"
           >
             Explore Trips
           </Link>
 
-          {/* Profile Icon */}
-          <button
-            type="button"
-            aria-label="Profile"
-            className="hidden h-9 w-9 items-center justify-center border border-[#e4e2de] bg-[#efeeea] text-[#1b1c1a] sm:flex"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              className="h-[18px] w-[18px]"
-            >
-              <circle cx="12" cy="8" r="3.5" />
-              <path d="M5.5 20c.8-3.3 3-5 6.5-5s5.7 1.7 6.5 5" />
-            </svg>
-          </button>
-
-          {/* Mobile Menu Button */}
           <button
             type="button"
             aria-label="Open Menu"
@@ -112,16 +88,15 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="border-t border-[#e4e2de] bg-[#fbf9f5] md:hidden">
-          <nav className="mx-auto flex max-w-[1440px] flex-col px-5 py-4">
+          <nav className="mx-auto flex max-w-360 flex-col px-5 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="border-b border-[#e4e2de] py-4 font-[var(--font-work-sans)] text-xs font-semibold uppercase tracking-[0.12em] text-[#58413d] last:border-b-0"
+                className="border-b border-[#e4e2de] py-4 font-body text-xs font-semibold uppercase tracking-[0.12em] text-[#58413d] last:border-b-0"
               >
                 {link.label}
               </Link>
@@ -130,7 +105,7 @@ export default function Navbar() {
             <Link
               href="#packages"
               onClick={() => setIsMenuOpen(false)}
-              className="mt-4 inline-flex items-center justify-center bg-[#bd442f] px-6 py-3 font-[var(--font-work-sans)] text-xs font-semibold uppercase tracking-[0.12em] text-white"
+              className="mt-4 inline-flex items-center justify-center bg-[#bd442f] px-6 py-3 font-body text-xs font-semibold uppercase tracking-[0.12em] text-white"
             >
               Explore Trips
             </Link>
