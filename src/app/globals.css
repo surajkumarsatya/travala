@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-display: var(--font-manrope);
+  --font-body: var(--font-work-sans);
+}
+
 :root {
   --background: #fbf9f5;
   --foreground: #1b1c1a;
