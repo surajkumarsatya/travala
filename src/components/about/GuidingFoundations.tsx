@@ -41,10 +41,6 @@ export default function GuidingFoundations() {
               Our Guiding Foundations
             </h2>
           </div>
-
-          <span className="hidden font-body text-[8px] font-semibold uppercase tracking-[0.16em] text-[#78736e] sm:block">
-            03 Architectural Tenets →
-          </span>
         </div>
 
         {/* Cards */}
@@ -75,11 +71,9 @@ export default function GuidingFoundations() {
 
               {/* Bottom */}
               <div className="mt-auto flex items-center justify-between border-t border-[#e4e2de] pt-4">
-                <span className="font-body text-[7px] font-semibold uppercase tracking-[0.14em] text-[#78736e]">
+                <span className="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-[#78736e]">
                   {foundation.tag}
                 </span>
-
-                <span className="text-[10px] text-[#78736e]">↗</span>
               </div>
             </article>
           ))}
