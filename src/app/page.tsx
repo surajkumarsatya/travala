@@ -1,11 +1,19 @@
+import About from "@/components/About";
+import CTA from "@/components/CTA";
+import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
+import Packages from "@/components/Packages";
 
 export default function Home() {
   return (
     <main>
-      <Navbar />
+      
       <Hero />
+      <About />
+      <Packages />
+      <CTA />
+      <Contact />
+  
     </main>
   );
 }

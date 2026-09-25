@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope, Work_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -13,7 +15,7 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Wanderly | Discover Your Next Great Escape",
+  title: "Travala | Discover Your Next Great Escape",
   description:
     "Explore unforgettable destinations and thoughtfully designed holiday packages.",
 };
@@ -28,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} ${workSans.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
