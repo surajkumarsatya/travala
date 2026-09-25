@@ -32,9 +32,8 @@ export default function WhyTravelersChoose() {
     <section className="bg-[#fbf9f5]">
       <div className="mx-auto max-w-360 px-5 py-20 md:px-16 md:py-24">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
-          {/* Image */}
           <div className="lg:col-span-6">
-            <div className="relative h-full min-h-[400px] w-full overflow-hidden bg-[#efeeea]">
+            <div className="relative h-full min-h-100 w-full overflow-hidden bg-[#efeeea]">
             <Image
                 src="/images/bali.jpg"
                 alt="Beautiful Bali landscape"
@@ -45,7 +44,6 @@ export default function WhyTravelersChoose() {
             </div>
           </div>
 
-          {/* Content */}
           <div className="flex flex-col justify-center lg:col-span-6 lg:pl-8">
             <span className="font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-[#bd442f]">
               The Measure of Excellence
@@ -61,7 +59,6 @@ export default function WhyTravelersChoose() {
               remains uncompromised hospitality.
             </p>
 
-            {/* Metric Cards */}
             <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {metrics.map((metric) => (
                 <article

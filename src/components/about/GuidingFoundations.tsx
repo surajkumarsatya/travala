@@ -26,7 +26,6 @@ export default function GuidingFoundations() {
   return (
     <section className="bg-[#f7f5f1]">
       <div className="mx-auto max-w-360 px-5 py-16 md:px-16 md:py-20">
-        {/* Heading */}
         <div className="mb-8 flex items-end justify-between">
           <div>
             <div className="mb-2 flex items-center gap-2">
@@ -43,14 +42,12 @@ export default function GuidingFoundations() {
           </div>
         </div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {foundations.map((foundation) => (
             <article
               key={foundation.number}
               className="flex min-h-60 flex-col bg-white p-5 md:min-h-67.5 md:p-6"
             >
-              {/* Icon placeholder / number */}
               <div className="mb-5 flex h-7 w-7 items-center justify-center bg-[#efeeea]">
                 <span className="font-body text-[9px] font-semibold text-[#bd442f]">
                   {foundation.number}
@@ -69,7 +66,6 @@ export default function GuidingFoundations() {
                 {foundation.description}
               </p>
 
-              {/* Bottom */}
               <div className="mt-auto flex items-center justify-between border-t border-[#e4e2de] pt-4">
                 <span className="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-[#78736e]">
                   {foundation.tag}
