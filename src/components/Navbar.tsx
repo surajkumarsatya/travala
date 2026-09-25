@@ -5,9 +5,9 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "about" },
-  { label: "Packages", href: "packages" },
-  { label: "Contact", href: "contact" },
+  { label: "About", href: "/about" },
+  { label: "Packages", href: "/packages" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -17,12 +17,12 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-[#e4e2de] bg-[#fbf9f5]/95 backdrop-blur-sm">
       <div className="mx-auto flex h-20 max-w-360 items-center justify-between px-5 md:px-16">
         <Link
-          href="#home"
+          href="/"
           className="flex items-center gap-3"
           onClick={() => setIsMenuOpen(false)}
         >
           <div className="flex h-8 w-8 items-center justify-center bg-[#9c2c1a] text-sm font-semibold text-white">
-            W
+            T
           </div>
 
           <span className="font-display text-xl font-semibold uppercase tracking-tight text-[#1b1c1a]">
@@ -30,7 +30,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link, index) => (
             <Link
               key={link.label}
@@ -48,18 +48,18 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <Link
-            href="#packages"
-            className="hidden items-center justify-center border border-transparent bg-[#bd442f] px-6 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#9c2c1a] sm:inline-flex"
+            href="/#packages"
+            className="hidden items-center justify-center border border-transparent bg-[#bd442f] px-6 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#9c2c1a] lg:inline-flex"
           >
             Explore Trips
           </Link>
 
           <button
             type="button"
-            aria-label="Open Menu"
+            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="flex items-center justify-center p-1 text-[#1b1c1a] md:hidden"
+            className="flex items-center justify-center p-1 text-[#1b1c1a] lg:hidden"
           >
             {isMenuOpen ? (
               <svg
@@ -87,9 +87,9 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
+      
       {isMenuOpen && (
-        <div className="border-t border-[#e4e2de] bg-[#fbf9f5] md:hidden">
+        <div className="border-t border-[#e4e2de] bg-[#fbf9f5] lg:hidden">
           <nav className="mx-auto flex max-w-360 flex-col px-5 py-4">
             {navLinks.map((link) => (
               <Link
@@ -103,7 +103,7 @@ export default function Navbar() {
             ))}
 
             <Link
-              href="#packages"
+              href="/#packages"
               onClick={() => setIsMenuOpen(false)}
               className="mt-4 inline-flex items-center justify-center bg-[#bd442f] px-6 py-3 font-body text-xs font-semibold uppercase tracking-[0.12em] text-white"
             >
