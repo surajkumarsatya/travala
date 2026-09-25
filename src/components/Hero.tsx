@@ -9,9 +9,7 @@ export default function Hero() {
     >
       <div className="mx-auto max-w-360 px-5 py-16 md:px-16 md:py-24">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
-          {/* Content */}
           <div className="flex flex-col justify-center lg:col-span-7">
-            {/* Eyebrow */}
             <div className="mb-2 inline-flex items-center gap-2">
               <span className="h-2 w-2 bg-[#bd442f]" />
 
@@ -20,19 +18,16 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Heading */}
             <h1 className="mb-4 max-w-xl font-(--font-manrope) text-[2.75rem] uppercase leading-[1.18] tracking-[-0.02em] text-[#1b1c1a] md:text-5xl md:leading-[1.17]">
               Discover Your Next Great Escape
             </h1>
 
-            {/* Description */}
             <p className="mb-10 max-w-xl font-(--font-work-sans) text-lg leading-7 text-[#58413d]">
               Explore unforgettable destinations and thoughtfully designed
               holiday packages made for memorable journeys. Handpicked
               sanctuaries with effortless planning.
             </p>
 
-            {/* CTA Buttons */}
             <div className="mb-16 flex flex-wrap items-center gap-4">
               <Link
                 href="#packages"
@@ -50,7 +45,6 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Metrics */}
             <div className="grid grid-cols-3 border-t border-[#e4e2de] pt-6">
               <div className="flex flex-col">
                 <span className="font-(--font-manrope) text-2xl tracking-tight text-[#1b1c1a]">
@@ -84,7 +78,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Hero Image */}
           <div className="relative mt-4 lg:col-span-5 lg:mt-0">
             <div className="relative aspect-4/5 w-full overflow-hidden border border-[#e4e2de] bg-[#efeeea]">
               <Image
@@ -97,8 +90,7 @@ export default function Hero() {
               />
             </div>
 
-            {/* Floating Badge */}
-            <div className="absolute -bottom-6 -left-4 z-10 max-w-xs border border-[#1b1c1a] bg-white p-4 md:-bottom-8 md:-left-8 md:p-6">
+            <div className="absolute -bottom-6 -left-4 z-10 max-w-xs border border-[#1b1c1a] bg-white p-4 md:-bottom-8 md:-left-8 md:p-2">
               <div className="mb-1 flex items-center gap-2">
                 <span className="h-1.5 w-1.5 bg-[#bd442f]" />
 
