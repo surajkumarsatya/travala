@@ -8,26 +8,26 @@ export default function Packages() {
       id="packages"
       className="border-b border-[#e4e2de] bg-[#fbf9f5]"
     >
-      <div className="mx-auto max-w-360 px-5 py-20 md:px-16 md:py-28">
-        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div>
-            <div className="mb-4 flex items-center gap-2">
-              <span className="h-2 w-2 bg-[#bd442f]" />
+      <div className="mx-auto max-w-360 px-5 py-20 md:px-12 lg:px-16 md:py-28">
+        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-col md:items-start lg:flex-row lg:items-end">
+            <div>
+                <div className="mb-4 flex items-center gap-2">
+                <span className="h-2 w-2 bg-[#bd442f]" />
 
-              <span className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-[#bd442f]">
-                Popular Packages
-              </span>
+                <span className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-[#bd442f]">
+                    Popular Packages
+                </span>
+                </div>
+
+                <h2 className="max-w-2xl font-display text-4xl font-semibold uppercase leading-tight tracking-[-0.02em] text-[#1b1c1a] md:text-5xl">
+                Explore our holiday packages
+                </h2>
             </div>
 
-            <h2 className="max-w-2xl font-display text-4xl font-semibold uppercase leading-tight tracking-[-0.02em] text-[#1b1c1a] md:text-5xl">
-              Explore our holiday packages
-            </h2>
-          </div>
-
-          <p className="max-w-md font-body text-base leading-7 text-[#58413d]">
-            Choose from some of our most popular destinations and start
-            planning your next adventure.
-          </p>
+            <p className="max-w-md font-body text-base leading-7 text-[#58413d]">
+                Choose from some of our most popular destinations and start planning your
+                next adventure.
+            </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -75,10 +75,10 @@ export default function Packages() {
                   </div>
 
                   <Link
-                    href="#contact"
+                    href={`/packages/${item.destination.toLowerCase()}`}
                     className="font-body text-xs font-semibold uppercase tracking-[0.12em] text-[#1b1c1a] transition-colors hover:text-[#bd442f]"
                   >
-                    View Details →
+                    View Details
                   </Link>
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function Packages() {
 
         <div className="mt-12 flex justify-center">
           <Link
-            href="#contact"
+            href="/packages"
             className="border border-[#1b1c1a] px-8 py-3.5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-[#1b1c1a] transition-colors hover:bg-[#1b1c1a] hover:text-white"
           >
             View All Packages

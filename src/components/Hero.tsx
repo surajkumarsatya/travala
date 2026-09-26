@@ -7,7 +7,7 @@ export default function Hero() {
       id="home"
       className="w-full border-b border-[#e4e2de] bg-[#fbf9f5]"
     >
-      <div className="mx-auto max-w-360 px-5 py-16 md:px-16 md:py-24">
+      <div className="mx-auto max-w-360 px-5 py-16 md:px-12 lg:px-16 md:py-24">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="flex flex-col justify-center lg:col-span-7">
             <div className="mb-2 inline-flex items-center gap-2">
@@ -18,7 +18,7 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="mb-4 max-w-xl font-(--font-manrope) text-[2.75rem] uppercase leading-[1.18] tracking-[-0.02em] text-[#1b1c1a] md:text-5xl md:leading-[1.17]">
+            <h1 className="mb-4 max-w-xl font-(--font-manrope) text-[2rem] uppercase leading-[1.18] tracking-[-0.02em] text-[#1b1c1a] md:text-5xl md:leading-[1.17]">
               Discover Your Next Great Escape
             </h1>
 
@@ -34,7 +34,6 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 border border-transparent bg-[#bd442f] px-8 py-4 font-(--font-work-sans) text-xs uppercase tracking-[0.15em] text-white transition-colors hover:bg-[#9c2c1a]"
               >
                 Explore Packages
-                <span aria-hidden="true">→</span>
               </Link>
 
               <Link

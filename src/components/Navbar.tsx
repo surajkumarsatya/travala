@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -12,10 +13,11 @@ const navLinks = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#e4e2de] bg-[#fbf9f5]/95 backdrop-blur-sm">
-      <div className="mx-auto flex h-20 max-w-360 items-center justify-between px-5 md:px-16">
+      <div className="mx-auto flex h-20 max-w-360 items-center justify-between px-5 md:px-12 lg:px-16">
         <Link
           href="/"
           className="flex items-center gap-3"
@@ -31,19 +33,26 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">
-          {navLinks.map((link, index) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className={`font-body text-xs font-semibold uppercase tracking-[0.12em] transition-colors ${
-                index === 0
-                  ? "text-[#bd442f]"
-                  : "text-[#58413d] hover:text-[#9c2c1a]"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
+
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`font-body text-xs font-semibold uppercase tracking-[0.12em] transition-colors ${
+                  isActive
+                    ? "text-[#bd442f]"
+                    : "text-[#58413d] hover:text-[#9c2c1a]"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-4">
@@ -87,10 +96,10 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-      
+
       {isMenuOpen && (
         <div className="border-t border-[#e4e2de] bg-[#fbf9f5] lg:hidden">
-          <nav className="mx-auto flex max-w-360 flex-col px-5 py-4">
+          <nav className="mx-auto flex max-w-360 flex-col px-5 py-4 md:px-12 lg:px-16">
             {navLinks.map((link) => (
               <Link
                 key={link.label}

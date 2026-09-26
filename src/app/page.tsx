@@ -7,13 +7,11 @@ import Packages from "@/components/Packages";
 export default function Home() {
   return (
     <main>
-      
       <Hero />
       <About />
       <Packages />
       <CTA />
       <Contact />
-  
     </main>
   );
 }

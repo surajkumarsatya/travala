@@ -1,16 +1,16 @@
 import Link from "next/link";
 
 const footerLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Packages", href: "#packages" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Packages", href: "/packages" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-[#fbf9f5] text-[#1b1c1a]">
-      <div className="mx-auto max-w-360 px-5 py-14 md:px-16 md:py-16">
+      <div className="mx-auto max-w-360 px-5 py-14 md:px-12 lg:px-16 md:py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
           <div className="md:col-span-5">
             <Link
