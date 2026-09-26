@@ -29,6 +29,8 @@ export default function Contact({
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -43,17 +45,51 @@ export default function Contact({
     if (submitted) {
       setSubmitted(false);
     }
+
+    if (error) {
+      setError("");
+    }
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitted(false);
+    setError("");
 
-    setForm({
-      ...initialForm,
-      message: defaultMessage,
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data.message || "Unable to send your message.",
+        );
+      }
+
+      setSubmitted(true);
+
+      setForm({
+        ...initialForm,
+        message: defaultMessage,
+      });
+    } catch (error) {
+      console.error("Contact form submission error:", error);
+
+      setError(
+        "Unable to send your message. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -61,7 +97,7 @@ export default function Contact({
       id="contact"
       className="border-b border-[#e4e2de] bg-[#fbf9f5]"
     >
-      <div className="mx-auto max-w-360 px-5 py-20 md:px-12 lg:px-16 md:py-28">
+      <div className="mx-auto max-w-360 px-5 py-20 md:px-12 md:py-28 lg:px-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-5">
             <div className="mb-4 flex items-center gap-2">
@@ -124,6 +160,12 @@ export default function Contact({
             {submitted && (
               <div className="mb-6 border border-[#9c2c1a] bg-[#f8e9e5] px-5 py-4 font-body text-sm text-[#7f2416]">
                 Thank you! Your inquiry has been received.
+              </div>
+            )}
+
+            {error && (
+              <div className="mb-6 border border-[#9c2c1a] bg-[#f8e9e5] px-5 py-4 font-body text-sm text-[#7f2416]">
+                {error}
               </div>
             )}
 
@@ -209,9 +251,10 @@ export default function Contact({
 
               <button
                 type="submit"
-                className="w-full bg-[#bd442f] px-8 py-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-white transition-colors hover:bg-[#9c2c1a] sm:w-auto"
+                disabled={isSubmitting}
+                className="w-full bg-[#bd442f] px-8 py-4 font-body text-xs font-semibold uppercase tracking-[0.15em] text-white transition-colors hover:bg-[#9c2c1a] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
