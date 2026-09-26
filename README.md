@@ -4,7 +4,7 @@ Travala is a responsive holiday packages website created as part of a frontend d
 
 ## Live Demo
 
-- Live Website: *Add your deployed URL here*
+- Live Website: [https://travala-suraj.vercel.app/](https://travala-suraj.vercel.app/)
 
 ## GitHub Repository
 
@@ -229,7 +229,7 @@ The project can be deployed on a Next.js-compatible platform such as Vercel.
 [https://github.com/surajkumarsatya/travala](https://github.com/surajkumarsatya/travala)
 
 **Deployed Website**
-*\<your-deployed-website-url\>*
+[https://travala-suraj.vercel.app/](https://travala-suraj.vercel.app/)
 
 ## Project
 
