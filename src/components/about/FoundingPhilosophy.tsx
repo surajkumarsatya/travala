@@ -1,7 +1,7 @@
 export default function FoundingPhilosophy() {
   return (
     <section className="border-t border-[#e4e2de] bg-white">
-      <div className="mx-auto max-w-360 px-5 py-20 md:px-16 md:py-28">
+      <div className="mx-auto max-w-360 px-5 py-20 md:px-12 lg:px-16 md:py-28">
         <div className="mx-auto max-w-4xl text-center">
           <div className="mb-6 flex items-center justify-center gap-2">
             <span className="h-2 w-2 bg-[#bd442f]" />

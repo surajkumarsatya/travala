@@ -30,7 +30,7 @@ const metrics = [
 export default function WhyTravelersChoose() {
   return (
     <section className="bg-[#fbf9f5]">
-      <div className="mx-auto max-w-360 px-5 py-20 md:px-16 md:py-24">
+      <div className="mx-auto max-w-360 px-5 py-20 md:px-12 lg:px-16 md:py-24">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-6">
             <div className="relative h-full min-h-100 w-full overflow-hidden bg-[#efeeea]">

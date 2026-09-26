@@ -25,7 +25,7 @@ const foundations = [
 export default function GuidingFoundations() {
   return (
     <section className="bg-[#f7f5f1]">
-      <div className="mx-auto max-w-360 px-5 py-16 md:px-16 md:py-20">
+      <div className="mx-auto max-w-360 px-5 py-16 md:px-12 lg:px-16 md:py-20">
         <div className="mb-8 flex items-end justify-between">
           <div>
             <div className="mb-2 flex items-center gap-2">

@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function OurStory() {
   return (
     <section className="border-b border-[#e4e2de] bg-[#fbf9f5]">
-      <div className="mx-auto max-w-360 px-5 py-20 md:px-16 md:py-28">
+      <div className="mx-auto max-w-360 px-5 py-20 md:px-12 lg:px-16 md:py-28">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
             <div className="relative aspect-4/3 w-full overflow-hidden border border-[#e4e2de] bg-[#efeeea]">
